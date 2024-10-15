@@ -2,4 +2,4 @@
 
 
 
-<image src="https://github.com/JesperBoman/Horkei_begins/blob/main/GH_bg.png" width="200">
+<image src="https://github.com/JesperBoman/Horkei_begins/blob/main/GH_bg.png" width="400">
