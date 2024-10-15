@@ -24,7 +24,7 @@ for s2 in "${arr2[@]}"
 do
 
 
-bedtools intersect -a $dir/$s1.$chromosome.switch.regions.bed -b $dir/$s2.$chromosome.switch.regions.bed -wo | awk -v s1=$s1 -v s2=$s2 -v chr=$chromosome 'BEGIN{sum=0}{sum+=$7} END{print chr "\t" s1 "\t" s2 "\t" sum "\t" NR}' >> fisher.junction.pairwise.results
+bedtools intersect -a $dir/$s1.$chromosome.fj.bed -b $dir/$s2.$chromosome.fj.bed -wo | awk -v s1=$s1 -v s2=$s2 -v chr=$chromosome 'BEGIN{sum=0}{sum+=$7} END{print chr "\t" s1 "\t" s2 "\t" sum "\t" NR}' >> fisher.junction.pairwise.results
 
 
 
