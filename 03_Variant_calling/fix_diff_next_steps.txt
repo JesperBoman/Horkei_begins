@@ -1,0 +1,11 @@
+awk -f fix_diff_2pops.awk PI.HQSNPs.KBH_artax.frq.count PI.HQSNPs.Agestis.frq.count > fixeddiff.list
+
+
+grep "Chr_Z" fixeddiff.list -v > fixeddiff_noZ.list
+
+
+awk -f evalpop_af.awk fixeddiff_noZ.list PI.HQSNPs.Blekingeartax.frq.count > Blekingeartax_fd_Agestis_freq
+awk -f evalpop_af.awk fixeddiff_noZ.list PI.HQSNPs.Horkei.frq.count > Horkei_fd_Agestis_freq
+awk -f evalpop_af.awk fixeddiff_noZ.list  RomAge.HQSNPs.RomAge.frq.count > RomAge_fd_Agestis_freq
+
+awk 'FNR==NR{if($4 == 0.5){bhet[$1 "\t" $2]} else if($4 == 1){ bhom[$1 "\t" $2]}} FNR!=NR{locus=$1 "\t" $2; if(locus in bhet){print $0 "\t" "bhet"} else if (locus in bhom){print $0 "\t" "bhom" } else{print $0 "\t" "b0"}}' Blekingeartax_fd_Agestis_freq Horkei_fd_Agestis_freq > bhet_bhom_Horkei_frq
