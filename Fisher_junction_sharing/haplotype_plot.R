@@ -5,7 +5,7 @@ setwd("~/Downloads")
 sample.info <- read.table(file = file.choose(), header = T)
 sample.info$Short.ID <- gsub("P28119_", "", sample.info$NGI_ID)
 sample.info <- sample.info[order(sample.info$Short.ID),]
-sample.info$Admixture_taxa[45] <- "Blekingeartax"
+sample.info$Admixture_taxa[45] <- "Blekingehorkei"
 
 phased_vcf_df<-read.table("Chr_1.phased_9.8-9.9MB.vcf", header=T)
 
@@ -27,7 +27,7 @@ for(i in 1:length(sample.info$Short.ID )){
   phased_vcf_df_long$Taxa[m_list] <- sample.info$Admixture_taxa[i]
 }
 
-phased_vcf_df_long$Taxa <- factor(phased_vcf_df_long$Taxa, levels=c("Agestis", "Horkei", "Blekingeartax", "Artax"))
+phased_vcf_df_long$Taxa <- factor(phased_vcf_df_long$Taxa, levels=c("Agestis", "Horkei", "Blekingehorkei", "Artax"))
 
 phased_vcf_df_long<-phased_vcf_df_long[order(phased_vcf_df_long$Taxa),]
 
