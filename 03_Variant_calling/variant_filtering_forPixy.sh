@@ -5,8 +5,8 @@
 #Load modules
 module load bioinfo-tools vcftools/0.1.16 samtools/1.19
 
-#gzvcf="Arx.preBQSR.allsites.dedup.g.vcf"
-gzvcf="Arx.preBQSR.allsites.dedup.g.Z_ploidyHapF.vcf"
+#gzvcf="Arx.preBQSR.allsites.g.vcf"
+gzvcf="Arx.preBQSR.allsites.g.Z_ploidyHapF.vcf"
 
 vcftools --gzvcf $gzvcf.gz \
 --remove-indels \
