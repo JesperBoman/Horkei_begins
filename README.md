@@ -1,3 +1,5 @@
 # Horkei_begins
 
-![alt text](https://github.com/JesperBoman/Horkei_begins/blob/main/GH_bg.png | width=100)
+
+
+<image src="https://github.com/JesperBoman/Horkei_begins/blob/main/GH_bg.png" width="200">
