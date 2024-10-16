@@ -12,3 +12,5 @@ Steps:
 Auxiliary tools:
 1. Visualize phased genotypes using haplotype_plot.R
 2. Visualize Fisher Junctions in a specific region using FJvis_prep.sh followed by FJ_plot.R
+
+<image src="https://github.com/JesperBoman/Horkei_begins/blob/main/Fisher_junction_sharing/fisher_junction_collage.pdf" width="800">
