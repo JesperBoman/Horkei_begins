@@ -6,7 +6,7 @@
 
 module load bioinfo-tools BEDTools/2.29.2
 
-genome="/crex/proj/uppstore2017185/b2014034_nobackup/Jesper/Aricia/Reference/ilAriArta2.1_SH_auto.genome"
+genome="../Reference/ilAriArta2.1_SH_auto.genome"
 length=499
 num=1000
 
