@@ -1,3 +1,5 @@
+#!/bin/bash -l
+
 awk '(NR>=7)' <(zcat  data.filt.0.call.gz) |cut -f 1,2 >snps.0.txt
 paste snps.0.txt maleInfMap.LODL7.sizeL100.txt |awk '($3>0)' > snps.0.maleInfMap.LODL7.txt
 paste snps.0.txt maleInfMap.LODL7.sizeL100.txt |awk '{print $0}' > snps.0.maleInfMap.LODL7.UNFILT.txt
