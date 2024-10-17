@@ -15,6 +15,7 @@ map$Position2 <- as.numeric(map$Position2)
 
 map$Type <- ifelse(grepl("\\*", map$Position), "Asterisk", "Normal")
 
+#Visualize Lep-Map3 output map using a Marey map
 ggplot(map, aes(x=Position2, y=Male_gen_pos))+geom_point(alpha=0.1)+
   facet_wrap(~Chromosome)
   
@@ -107,6 +108,7 @@ all(round(testDF$Y,5) == cummax(round(testDF$Y,5)))
 testDF$Y2 <- ifelse(testDF$Y<1e-10, 0, testDF$Y)
 testDF$Y2 <- round(testDF$Y2, 10)
 
+
 print(all(testDF$Y2== cummax(testDF$Y2)))
 
 testDF$Chromosome <- Chr
@@ -120,12 +122,16 @@ ggplot(interpolmap, aes(x=X, y=Y2))+
   facet_wrap(~Chromosome)
 
 
+
 for(Chr in unique(fixmap$Chromosome)){
 print(ggplot(interpolmap[interpolmap$Chromosome == Chr,], aes(x=X, y=Y2))+
   geom_point(data=fixmap[fixmap$Chromosome == Chr,], aes(x=Position2, y=Male_gen_pos_flip))+
   geom_line(col="red")+
   facet_wrap(~Chromosome))
 }
+
+
+write.table(interpolmap[,c(4,1,3)], file="ArxLM.interpol.1.0.txt", quote=F, sep="\t", row.names=F, col.names=F)
 
 
 map_length_per_chr<-ddply(interpolmap, c("Chromosome"), function(x) c(max(x$Y2) ))
@@ -140,4 +146,5 @@ ggplot(map, aes(x=Position2, y=Male_gen_pos))+geom_point(alpha=0.1)+
 ggplot(map, aes(x=Position2, y=Male_gen_pos))+geom_point(alpha=0.1)+
   geom_point(data=testDF, aes(x=X, y=Y2), col="red", alpha=0.1)
 
- ArxLM.interpol.1.0.txt
+ 
+
