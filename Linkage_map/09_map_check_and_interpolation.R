@@ -140,3 +140,4 @@ ggplot(map, aes(x=Position2, y=Male_gen_pos))+geom_point(alpha=0.1)+
 ggplot(map, aes(x=Position2, y=Male_gen_pos))+geom_point(alpha=0.1)+
   geom_point(data=testDF, aes(x=X, y=Y2), col="red", alpha=0.1)
 
+ ArxLM.interpol.1.0.txt
