@@ -1,5 +1,10 @@
 #!/bin/bash -l
 
+#Add hybrid population read counts according to column number below:
+#8. Read counts of allele A in sample 1
+#9. Read counts of allele a in sample 1
+#10. Read counts of allele A in sample 2
+#11. Read counts of allele a in sample 2
 
 while IFS= read -r sample
 do
