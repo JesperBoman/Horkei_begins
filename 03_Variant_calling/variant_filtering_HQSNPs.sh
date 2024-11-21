@@ -6,7 +6,7 @@
 module load bioinfo-tools GATK/4.3.0.0 bcftools/1.17
 
 #Concatenate scaffold-separate allsites vcfs
-bcftools concat --threads 2 -o Arx.preBQSR.allsites.RomAge.vcf.gz Chr*.dir/Arx*.allsites.vcf.gz
+bcftools concat --threads 2 -o Arx.preBQSR.allsites.vcf.gz Chr*.dir/Arx*.allsites.vcf.gz
 
 #Index concatenated vcf
 gatk --java-options "-Xmx6g" IndexFeatureFile \
