@@ -22,7 +22,7 @@ gatk --java-options "-Xmx6g" SelectVariants \
   -V Arx.preBQSR.allsites.vcf.gz \
   --select-type-to-include SNP \
   --create-output-variant-index \
-  -O Arx.preBQSR.RomAge.SNPs.vcf.gz
+  -O Arx.preBQSR.SNPs.vcf.gz
 
 
 
