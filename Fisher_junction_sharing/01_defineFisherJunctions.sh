@@ -1,6 +1,7 @@
 #!/bin/bash -l
 
 dir="directory_with_phased_vcf_files"
+mkdir fisher.junctions
 
 while IFS= read -r chromosome
 do
