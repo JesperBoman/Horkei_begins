@@ -43,6 +43,8 @@ zcat $IN_FILE | java -cp $LMdir/bin/ OrderMarkers2 map=$MAP_FILE numThreads=$CPU
 	echo "assessing marker order for LG" $j "refining step" $IT
  	OUT_FILE="order_LG/order_"$MISS".LODL."$LODL".LG"$j"."$IT".txt"
 	ORDER_FILE="order_LG/order_"$MISS".LODL."$LODL".LG"$j"."$k".txt"
+
+ #Potential error in the following command, should perhaps have used improveOrder=1 to improver the order, in its currents state the order is only evaluated
  	zcat $IN_FILE | java -cp $LMdir/bin/ OrderMarkers2 evaluateOrder=$ORDER_FILE  numThreads=$CPU data=- usePhysical=1 useMorgan=1 $PHASE chromosome=$j > $OUT_FILE  2> $OUT_FILE.log
 	
 	done
