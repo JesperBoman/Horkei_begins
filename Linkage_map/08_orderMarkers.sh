@@ -44,7 +44,7 @@ zcat $IN_FILE | java -cp $LMdir/bin/ OrderMarkers2 map=$MAP_FILE numThreads=$CPU
  	OUT_FILE="order_LG/order_"$MISS".LODL."$LODL".LG"$j"."$IT".txt"
 	ORDER_FILE="order_LG/order_"$MISS".LODL."$LODL".LG"$j"."$k".txt"
 
- #Potential error in the following command, should perhaps have used improveOrder=1 to improver the order, in its currents state the order is only evaluated
+ #Potential error in the following command, should perhaps have used improveOrder=1 to improver the order, in its currents state the order is only evaluated. Not 100% sure what it means.
  #N.B. Claire Merot in her original implementation (https://github.com/clairemerot/lepmap3_pipeline/blob/master/01_scripts/07_run_order_marker.sh), does not use improveOrder=1
  	zcat $IN_FILE | java -cp $LMdir/bin/ OrderMarkers2 evaluateOrder=$ORDER_FILE  numThreads=$CPU data=- usePhysical=1 useMorgan=1 $PHASE chromosome=$j > $OUT_FILE  2> $OUT_FILE.log
 	
