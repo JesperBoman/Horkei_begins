@@ -43,4 +43,4 @@ i=$2
 
 ../bpp-4.7.0-linux-x86_64/bin/bpp --cfile msci_m${model}.bfdriver/msci_m${model}.ctl.${i}
 
-#Compare marginal likelihoods found in the outfile of BPP, e.g. BFbeta = 0.005300  E_b(lnf(X)) = -1945083.4869, using the script Bayesian_model_comparison.R
+#Compare the ElnfXs values found in the outfile of BPP, e.g. BFbeta = 0.005300  E_b(lnf(X)) = -1945083.4869, using the script Bayesian_model_comparison.R
