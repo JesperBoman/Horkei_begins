@@ -1,0 +1,46 @@
+#!/bin/bash -l
+
+#Create control files
+../../bpp-4.7.0-linux-x86_64/bin/bpp --bfdriver ../msci_mBarx.ctl --points 16
+
+#Fix bfdriver .ctl files to make correct output
+model="Barx"
+
+for i in {1..16}; 
+do
+
+awk -v i=$i -v model=$model 'NR!=7 && NR!=8 {print $0} NR==7{ print "outfile = 1000auto.msci_m" model ".results/out_1000auto." model "." i ".txt"} NR==8{ print "mcmcfile = 1000auto.msci_m" model ".results/mcmc_1000auto." model "."  i ".txt"}' msci_m${model}.ctl.$i > tmp
+
+mv tmp msci_m${model}.ctl.$i
+
+done
+
+
+
+
+#!/bin/bash -l
+
+
+model="C"
+
+for i in {1..16}; 
+do
+
+#i=1 
+
+sbatch -J $model.$i -o slurm/$model.$i.output -e slurm/$model.$i.error -A "Project ID" -t 07-00:00:00 -p node -n 1 bpp_bfdriver.sh $model $i
+
+
+done
+
+
+
+
+#!/bin/bash -l
+
+model=$1
+i=$2
+
+../bpp-4.7.0-linux-x86_64/bin/bpp --cfile msci_m${model}.bfdriver/msci_m${model}.ctl.${i}
+
+#Compare marginal likelihoods found in the outfile of BPP, e.g. BFbeta = 0.005300  E_b(lnf(X)) = -1945083.4869, using the script Bayesian_model_comparison.R
