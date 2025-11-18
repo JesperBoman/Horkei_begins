@@ -3,6 +3,8 @@ In this directory there are scripts to do a pairwise Fisher junction sharing ana
 As input you use phased vcf-files generated with SHAPEIT4. 
 If you use some other software to determine identical-by-descent blocks and then produce a phased vcf-file accordingly, it should work just as well or possibly better.
 
+Note: make_FJ_bed.awk assumes that the phased vcf files have a header on the 10th row and from the 11th row on are the variants.
+
 Steps:
 
 1. Run 01_defineFisherJunctions.sh employing make_FJ_bed.awk to produce bed-files of Fisher junctions per sample.
