@@ -1,5 +1,7 @@
 #!/bin/bash -l
 
+#Inspired by Linnéa Smeds' scipt: https://github.com/linneas/fennoscandian_wolf/blob/main/run_shapeit.sh
+
 ml bioinfo-tools SHAPEIT/v4.2.2 bcftools/1.19
 
 vcf=$1
